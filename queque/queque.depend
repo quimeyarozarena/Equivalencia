@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1559168557 source:c:\users\quimey.arozarena\desktop\queque\main.c
+1560961499 source:c:\users\quimey.arozarena\desktop\queque\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tfunction.h"
 
-1559168660 c:\users\quimey.arozarena\desktop\queque\tfunction.h
+1560963025 c:\users\quimey.arozarena\desktop\queque\tfunction.h
 	"tstruct.h"
 
 1559164418 c:\users\quimey.arozarena\desktop\queque\tstruct.h

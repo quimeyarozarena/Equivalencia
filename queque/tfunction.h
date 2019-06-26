@@ -35,11 +35,25 @@ void enqueue(Tqueue *queue, char data){
 
 void show(Tqueue queue)
 {
-    while(!isFirstEmpty(queue))
-    {
-        printf("%c\n",(queue).first->data);
-        (queue).first = (queue).first->next;
+    char letra;
+
+    while(!isFirstEmpty(queue)) {
+        dequeue(&queue, &letra);
+        printf("%c", letra);
     }
 }
+
+void showRecursion(Tqueue queue)
+{
+    char data;
+    if(isFirstEmpty(queue)) {
+        dequeue(&queue, &data);
+        showRecursion(queue);
+        printf("%c\n", data);
+        enqueue(&queue, data);
+    }
+}
+
+
 
 

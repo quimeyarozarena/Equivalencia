@@ -35,9 +35,11 @@ void pop(tstack **stack, char *data)
 
 void show(tstack *stack)
 {
-    while(isNotEmpty(stack))
-    {
-        printf("%c\n",stack->data);
-        stack = stack->next;
+    char data;
+    if(isNotEmpty(stack)) {
+        pop(&stack, &data);
+        show(stack);
+        printf("%c\n", data);
+        push(&stack, data);
     }
 }
