@@ -36,9 +36,20 @@ void pop(tstack **stack, char *data)
 void show(tstack *stack)
 {
     char data;
+    tstack *aux;
+    aux = stack;
+    while(isNotEmpty(stack)) {
+        pop(&stack, &data);
+        printf("%c\n", data);
+    }
+}
+
+void show_recursive(tstack *stack)
+{
+    char data;
     if(isNotEmpty(stack)) {
         pop(&stack, &data);
-        show(stack);
+        show_recursive(stack);
         printf("%c\n", data);
         push(&stack, data);
     }

@@ -1,8 +1,1 @@
 # depslib dependency file v1.0
-1560366495 source:c:\users\quimey.arozarena\desktop\stack\main.c
-	<stdio.h>
-	<stdlib.h>
-	"tstack.h"
-
-1560366453 c:\users\quimey.arozarena\desktop\stack\tstack.h
-

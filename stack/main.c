@@ -17,7 +17,7 @@ int main()
         push(&stack, singlechar);
     }
     printf("Pila: \n");
-    show(stack);
+    show_recursive(stack);
     printf("Desea eliminar el ultimo elemento ingresado?: y/n ");
     scanf(" %c", &answer);
     if(answer=='y') {
@@ -25,7 +25,7 @@ int main()
         printf("Se elimino la letra: ");
         printf("%c \n", deletedData);
         printf("Pila sin letra eliminada: \n");
-        show(stack);
+        show_recursive(stack);
     }
 
     return 0;
