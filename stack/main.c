@@ -6,16 +6,16 @@ int main()
 {
     tstack* stack;
     stack=NULL;
-    char singlechar, answer, deletedData;
-    int index, size;
+    char singlechar, answer, deletedData, continueInsert;
 
-    printf("Cuantas letras desea ingresar?: ");
-    scanf("%d", &size);
-    for(index = 0; index < size; index++) {
+    do {
         printf("Ingrese una letra: ");
         scanf(" %c", &singlechar);
         push(&stack, singlechar);
-    }
+        printf("Desea ingresar otra letra?: s/n \n");
+        scanf(" %c", &continueInsert);
+    } while (continueInsert == 's');
+
     printf("Pila: \n");
     show_recursive(stack);
     printf("Desea eliminar el ultimo elemento ingresado?: y/n ");
