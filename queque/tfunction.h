@@ -11,7 +11,7 @@ int isFirstEmpty(Tqueue tqueue){
 
 void dequeue(Tqueue *queue, char *data){
     Tnode *aux;
-    if (!isFirstEmpty(*queue)) {
+    if ((*queue).first != NULL) {
         *data = (*queue).first->data;
         aux = (*queue).first;
         (*queue).first = (*queue).first->next;
@@ -24,7 +24,7 @@ void enqueue(Tqueue *queue, char data){
     tnode = malloc(sizeof(Tnode));
     tnode->data = data;
     tnode->next = NULL;
-    if(isFirstEmpty(*queue)) {
+    if((*queue).first == NULL) {
         (*queue).first = tnode;
         (*queue).last = tnode;
     } else {
@@ -32,6 +32,19 @@ void enqueue(Tqueue *queue, char data){
         (*queue).last = tnode;
     }
 }
+
+
+void show_recursive(Tqueue* queue)
+{
+    char data;
+    if((*queue).first != NULL) {
+        dequeue(queue, &data);
+        show_recursive(queue);
+        printf("%c\n", data);
+        enqueue(queue, data);
+    }
+}
+
 
 void show(Tqueue queue)
 {
@@ -42,18 +55,3 @@ void show(Tqueue queue)
         printf("%c", letra);
     }
 }
-
-void showRecursion(Tqueue queue)
-{
-    char data;
-    if(isFirstEmpty(queue)) {
-        dequeue(&queue, &data);
-        showRecursion(queue);
-        printf("%c\n", data);
-        enqueue(&queue, data);
-    }
-}
-
-
-
-

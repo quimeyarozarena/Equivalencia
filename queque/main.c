@@ -5,27 +5,27 @@
 int main()
 {
     Tqueue queue;
-    char answer, singlechar, deletedData;
-    int size, index;
+    char answer, singlechar, deletedData, continueInsert;
     init(&queue);
 
-    printf("Cuantas letras desea ingresar?: ");
-    scanf("%d", &size);
-    for(index = 0; index < size; index++) {
+    do {
         printf("Ingrese una letra: ");
         scanf(" %c", &singlechar);
         enqueue(&queue, singlechar);
-    }
-    printf("Cola: \n");
-    show(queue);
+        printf("Desea ingresar otra letra?: s/n \n");
+        scanf(" %c", &continueInsert);
+    } while (continueInsert == 's');
 
-    printf("Desea eliminar el primer elemento ingresado?: y/n ");
+    printf("Cola: \n");
+    show_recursive(&queue);
+
+    printf("Desea eliminar el primer elemento de la cola?: y/n ");
     scanf(" %c", &answer);
     if(answer=='y') {
         dequeue(&queue, &deletedData);
         printf("Se elimino la letra: ");
         printf("%c \n", deletedData);
         printf("Cola despues de eliminarse un elemento: \n");
-        show(queue);
+        show_recursive(&queue);
     }
 }
