@@ -5,7 +5,7 @@
 int main()
 {
     tstack* stack;
-    stack=NULL;
+    stack = NULL;
     char singlechar, answer, deletedData, continueInsert;
 
     do {

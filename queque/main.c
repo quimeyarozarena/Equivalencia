@@ -5,8 +5,8 @@
 int main()
 {
     Tqueue queue;
+    queue = NULL;
     char answer, singlechar, deletedData, continueInsert;
-    init(&queue);
 
     do {
         printf("Ingrese una letra: ");

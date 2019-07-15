@@ -1,17 +1,17 @@
 #include "tstruct.h"
 
-void init(Tqueue *c){
-    (*c).first = NULL;
-    (*c).last = NULL;
+void init(Tqueue *tqueue){
+    (*tqueue).first = NULL;
+    (*tqueue).last = NULL;
 }
 
-int isFirstEmpty(Tqueue tqueue){
-    return tqueue.first == NULL;
+int isFirstEmpty(Tqueue *tqueue){
+    return (*tqueue).first == NULL;
 }
 
 void dequeue(Tqueue *queue, char *data){
     Tnode *aux;
-    if ((*queue).first != NULL) {
+    if (!isFirstEmpty(queue)) {
         *data = (*queue).first->data;
         aux = (*queue).first;
         (*queue).first = (*queue).first->next;
@@ -24,7 +24,7 @@ void enqueue(Tqueue *queue, char data){
     tnode = malloc(sizeof(Tnode));
     tnode->data = data;
     tnode->next = NULL;
-    if((*queue).first == NULL) {
+    if(isFirstEmpty(queue)) {
         (*queue).first = tnode;
         (*queue).last = tnode;
     } else {
@@ -37,21 +37,10 @@ void enqueue(Tqueue *queue, char data){
 void show_recursive(Tqueue* queue)
 {
     char data;
-    if((*queue).first != NULL) {
+    if(!isFirstEmpty(queue)) {
         dequeue(queue, &data);
         show_recursive(queue);
         printf("%c\n", data);
         enqueue(queue, data);
-    }
-}
-
-
-void show(Tqueue queue)
-{
-    char letra;
-
-    while(!isFirstEmpty(queue)) {
-        dequeue(&queue, &letra);
-        printf("%c", letra);
     }
 }

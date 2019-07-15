@@ -1,9 +1,13 @@
-
 typedef struct stack
 {
     char data;
     struct stack *next;
 }tstack;
+
+void init(tstack *stack)
+{
+    stack = NULL;
+}
 
 int isNotEmpty(tstack *stack)
 {
@@ -28,9 +32,9 @@ void pop(tstack **stack, char *data)
         aux=(*stack);
         (*stack)=aux->next;
         free(aux);
-    }
-    else
+    } else {
         printf("Pila vacia");
+   }
 }
 
 void show(tstack *stack)
