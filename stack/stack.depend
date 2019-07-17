@@ -1,1 +1,8 @@
 # depslib dependency file v1.0
+1563377943 source:c:\users\quimey.arozarena\documents\github\equivalencia\stack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tstack.h"
+
+1563377997 c:\users\quimey.arozarena\documents\github\equivalencia\stack\tstack.h
+

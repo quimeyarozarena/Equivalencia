@@ -5,7 +5,7 @@
 int main()
 {
     Tqueue queue;
-    queue = NULL;
+    init(&queue);
     char answer, singlechar, deletedData, continueInsert;
 
     do {
@@ -19,9 +19,9 @@ int main()
     printf("Cola: \n");
     show_recursive(&queue);
 
-    printf("Desea eliminar el primer elemento de la cola?: y/n ");
+    printf("Desea eliminar el primer elemento de la cola?: s/n ");
     scanf(" %c", &answer);
-    if(answer=='y') {
+    if(answer=='s') {
         dequeue(&queue, &deletedData);
         printf("Se elimino la letra: ");
         printf("%c \n", deletedData);

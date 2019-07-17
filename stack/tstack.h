@@ -30,22 +30,11 @@ void pop(tstack **stack, char *data)
     {
         *data=(*stack)->data;
         aux=(*stack);
-        (*stack)=aux->next;
+        (*stack)=(*stack)->next;
         free(aux);
     } else {
         printf("Pila vacia");
    }
-}
-
-void show(tstack *stack)
-{
-    char data;
-    tstack *aux;
-    aux = stack;
-    while(isNotEmpty(stack)) {
-        pop(&stack, &data);
-        printf("%c\n", data);
-    }
 }
 
 void show_recursive(tstack *stack)
