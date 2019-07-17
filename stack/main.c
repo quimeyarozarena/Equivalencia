@@ -4,8 +4,8 @@
 
 int main()
 {
-    tstack* stack;
-    stack = NULL;
+    tstack *stack;
+    init(&stack);
     char singlechar, answer, deletedData, continueInsert;
 
     do {

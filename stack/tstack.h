@@ -4,9 +4,9 @@ typedef struct stack
     struct stack *next;
 }tstack;
 
-void init(tstack *stack)
+void init(tstack **stack)
 {
-    stack = NULL;
+    *stack = NULL;
 }
 
 int isNotEmpty(tstack *stack)
